@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background Color</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+        
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .container {
+    margin-top: 20%;
+    }
+
+    button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    button#redButton {
+    background-color: #ff4d4d;
+    color: white;
+    }
+
+    button#redButton:hover {
+    background-color: #e60000;
+    transform: scale(1.1);
+    }
+
+    button#blueButton {
+    background-color: #4d79ff;
+    color: white;
+    }
+
+    button#blueButton:hover {
+    background-color: #0033cc;
+    transform: scale(1.1);
+    }
+
+    * Container for the button */
+    .container1 {
+    text-align: center;
+    }
+        button.hoverButton {
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50; 
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        button.hoverButton:hover {
+        background-color: greenyellow; 
+        color: black;
+        
+        }
+
+    .container2 {
+    text-align: center;
+    }
+
+    #text {
+    font-size: 20px; 
+    margin-bottom: 20px;
+    transition: font-size 0.3s ease; 
+    }
+
+    button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+    background-color: #45a049;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button id="redButton">Red Background</button>
+    <button id="blueButton">Blue Background</button>
+  </div>
+
+  <div class="container1">
+    <button class="hoverButton">Hover Me</button>
+  </div>
+
+  <div class="container2">
+    <div class="buttons">
+        <button id="zoomOutButton">-</button>
+        <button id="zoomInButton">+</button>
+    </div>
+    <p id="text">Hello! Puk ah jmr, Kdmv JKJ.</p>
+  </div>
+
+  <script>
+    const redButton = document.getElementById('redButton');
+    const blueButton = document.getElementById('blueButton');
+
+    redButton.addEventListener('click', () => {
+    document.body.style.backgroundColor = 'red';
+    document.body.style.color = 'white';
+    });
+
+    blueButton.addEventListener('click', () => {
+    document.body.style.backgroundColor = 'blue';
+    document.body.style.color = 'white';
+    });
+
+    const textElement = document.getElementById('text');
+    const zoomInButton = document.getElementById('zoomInButton');
+    const zoomOutButton = document.getElementById('zoomOutButton');
+
+    let fontSize = 20;
+
+    zoomInButton.addEventListener('click', () => {
+    fontSize += 2; 
+    textElement.style.fontSize = `${fontSize}px`;
+    });
+
+    zoomOutButton.addEventListener('click', () => {
+    fontSize = Math.max(5, fontSize - 2); 
+    textElement.style.fontSize = `${fontSize}px`;
+    });
+
+  </script>
+</body>
+</html>
